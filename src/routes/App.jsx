@@ -1,17 +1,27 @@
 import React from 'react';
-import { BrowserRouter, Switch, Router, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Home from '../containers/Home'
+import Checkout from '../containers/Checkout'
+import Information from '../containers/Information'
+import NotFound from '../containers/NotFound'
+import Payment from '../containers/Payment'
+import Success from '../containers/Success'
+import Layout from '../components/Layout';
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/checkuot" component={Checkout} />
-        <Route exact path="/checkuot/information" component={Information} />
-        <Route exact path="/checkout/payment" component={Pay} />
-        <Route exact path="/checkout/success" component={} />
-        <Route component={NotFount} />
-      </Switch>
+      <Layout>
+        <Routes>
+          <Route path='/' element={<Home/>} />
+          <Route path='/checkuot' element={<Checkout/>} />
+          <Route path='/checkuot/information' element={<Information/>} />
+          <Route path='/checkout/payment' element={<Payment/>} />
+          <Route path='/checkout/success' element={<Success/>} />
+          <Route path='*' element={<NotFound/>} />
+        </Routes>
+      </Layout>
     </BrowserRouter>
   );
 }
