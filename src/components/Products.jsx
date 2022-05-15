@@ -1,15 +1,16 @@
 import React, { useContext } from 'react';
 import Product from './Product';
-import AppContext from '../context/AppContext'
+import AppContext from '../context/AppContext';
 import '../styles/components/Products.css';
 
 const Products = () => {
-  const { state, addToCart } = useContext
+  const { state, addToCart } = useContext(AppContext);
   const { products } = state;
 
-  const handleAddToCart = () => {
+  const handleAddToCart = product => () => {
     addToCart(product)
   }
+
   return (
     <div className="Products">
       <div className="Products-items">
@@ -18,7 +19,7 @@ const Products = () => {
         ))}
       </div>
     </div>
-  )
+  );
 }
 
-export default Products
+export default Products;

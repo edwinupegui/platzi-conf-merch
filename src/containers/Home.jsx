@@ -5,7 +5,7 @@ import initialState from '../initialState';
 const Home = () => {
   return (
     <Products products={initialState.products} />
-  )
+  );
 }
 
-export default Home
+export default Home;
