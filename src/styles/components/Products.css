@@ -10,22 +10,28 @@
   border-radius: 5px;
   margin: 0 0 20px 0;
   position: relative;
+  background-color: rgb(74, 139, 165);
 }
 .Products-item-info {
   padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
 }
 .Products-item-info h2 {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
-  display: flex;
-  justify-content: space-between;
+  color: #082129;
 }
 .Products-item-info h2 span {
-  color: #33b13a;
+  padding-left:  8px;
+  color: #79bfd6;
 }
 .Products-item-info p {
   font-size: 14px;
   font-weight: 300;
+  ccolor: #082129;
 }
 .Products-item img {
   width: 100%;

@@ -1,3 +1,7 @@
+body {
+  background-color: #082129;
+}
+
 .Header {
   display: flex;
   justify-content: space-between;

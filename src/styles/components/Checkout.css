@@ -13,7 +13,7 @@
 }
 .Checkout-item .fas {
   margin: 0 0 0 10px;
-  color: rgba(0,0,0,0.4);
+  color: #63b8ee;
   cursor: pointer;
 }
 .Checkout-item button {
@@ -26,7 +26,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #63b8ee;
 }
 .Checkout-element h4 {
   margin: 0;
