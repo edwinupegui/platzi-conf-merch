@@ -7,20 +7,19 @@ const Payment = ({ history }) => {
   const { state, addNewOrder } = useContext(AppContext);
   const { cart, buyer } = state;
 
-  const paypalOptions = {
-    clientId: 'AbTWA8QwvbMezD2KpK1hammcA7xHAPiczuNW88yiZkCW7NM_R1ms_2mwtGvmeNXy5CoN3yh85mTPC1nK',
+  const paypalOtions = {
+    clientId: 'AV4N3a6HylrzDHyPcmkk0XkeSWPvObkZf0_w7Q3XHLbs-p_1E-wxgFO2xIpD7XXrbQ_LuCe0h_plu9ku',
     intent: 'capture',
-    currency: 'USD',
+    currency: 'USD'
   }
 
   const buttonStyles = {
     layout: 'vertical',
-    shape: 'react',
+    shape: 'rect'
   }
 
   const handlePaymentSuccess = (data) => {
-    console.log(data);
-    if(data.status === 'COMPLETED'){
+    if (data.status === 'COMPLETED') {
       const newOrder = {
         buyer,
         product: cart,
@@ -42,7 +41,7 @@ const Payment = ({ history }) => {
       <div className="Payment-content">
         <h3>Resument del pedido:</h3>
         {cart.map((item) => (
-          <div className="Payment-item" key="item.title">
+          <div className="Payment-item" key={item.title}>
             <div className="Payment-element">
               <h4>{item.title}</h4>
               <span>
@@ -55,10 +54,10 @@ const Payment = ({ history }) => {
         ))}
         <div className="Payment-button">
           <PayPalButton
-            paypalOptions={paypalOptions}
+            paypalOptions={paypalOtions}
             buttonStyles={buttonStyles}
-            amount={handleSumTotal}
-            onPaymentStart={() => console.log('start payment')}
+            amount={handleSumTotal()}
+            onPaymentStart={() => console.log('Start Payment')}
             onPaymentSuccess={data => handlePaymentSuccess(data)}
             onPaymentError={error => console.log(error)}
             onPaymentCancel={data => console.log(data)}

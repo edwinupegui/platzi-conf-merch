@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react';
+import React, { useRef, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import AppContext from '../context/AppContext';
 import '../styles/components/Information.css';
